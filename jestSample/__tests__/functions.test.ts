@@ -38,7 +38,7 @@ test('sumOfArray Test for a valid input with a large array of integers', () => {
 
 test('sumOfArray Test for a return 0 in the case of empty array', () => {
     let testArray: number[] = [];
-    expect(() => sumOfArray(testArray)).toBe(0);
+    expect(sumOfArray(testArray)).toBe(0);
 });
 
 /* 異常系テスト */
@@ -81,7 +81,7 @@ test('asyncSumOfArray Test for a valid input with a large array of integers', as
 // 異常系テスト
 test('asyncSumOfArray Test for a valid input with an empty array', async () => {
     let testArray: number[] = [];
-    await expect(asyncSumOfArray(testArray)).rejects.toThrow(TypeError);
+    await expect(asyncSumOfArray(testArray)).resolves.toBe(0);
 });
 
 // 非同期型の関数を同期的に呼び出す場合エラーが出る
