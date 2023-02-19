@@ -36,12 +36,12 @@ test('sumOfArray Test for a valid input with a large array of integers', () => {
     expect(sumOfArray(testArray)).toBe(1500000);
 });
 
-/* 異常系テスト */
-test('sumOfArray Test for a valid input with an empty array', () => {
+test('sumOfArray Test for a return 0 in the case of empty array', () => {
     let testArray: number[] = [];
-    expect(() => sumOfArray(testArray)).toThrow(TypeError);
+    expect(() => sumOfArray(testArray)).toBe(0);
 });
 
+/* 異常系テスト */
 // sumOfArrayの引数にstring型の配列を渡しているためエラーが出る。
 // 型バリデーション側での責務であるためテストは行わない
 // test('sumOfArray Test for a valid input with a string', () => {
